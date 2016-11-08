@@ -13,12 +13,12 @@ const todos = [
     }
 ];
 
-export default class App extends React.Component{
+export default class App extends React.Component {
     constructor(props){
         super(props);
         this.state = {
             todos
-        }
+        };
     }
     render() {
         return (
@@ -36,7 +36,7 @@ export default class App extends React.Component{
     }
 
     createTask(task){
-        this.state.todos({
+        this.state.todos.push({
             task,
             isCompleted: false
         });
