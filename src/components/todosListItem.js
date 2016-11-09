@@ -1,7 +1,5 @@
 import React from "react";
 
-
-
 export default class ToDosListItem extends React.Component{
 
     constructor(props){
@@ -16,7 +14,7 @@ export default class ToDosListItem extends React.Component{
         if (this.state.isEditing) {
             return(
                 <td>
-                    <button >Save</button>
+                    <button onClick={this.onSaveClick.bind(this)}>Save</button>
                     <button onClick={this.onCancelClick.bind(this)}>Cancel</button>
                 </td>
             );
@@ -24,7 +22,7 @@ export default class ToDosListItem extends React.Component{
         return (
             <td>
                 <button onClick={this.onEditClick.bind(this)}>Edit</button>
-                <button>Delete</button>
+                <button onClick={this.props.deleteTask.bind(this, this.props.task)}>Delete</button>
             </td>
         );
     }
